@@ -1,7 +1,6 @@
 import { Article } from "@/lib/newsApi";
 import { formatDistanceToNow } from "date-fns";
 import { ExternalLink, Clock, User } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 
 interface NewsCardProps {
   article: Article;
@@ -34,9 +33,9 @@ export function NewsCard({ article, variant = "default" }: NewsCardProps) {
         )}
         <div className="absolute inset-0 news-gradient" />
         <div className="absolute bottom-0 left-0 right-0 p-6">
-          <Badge className="mb-3 bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-body text-xs uppercase tracking-wider">
+          <span className="mb-3 inline-block bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] font-body text-xs uppercase tracking-wider px-2.5 py-0.5 rounded-full">
             {article.source.name}
-          </Badge>
+          </span>
           <h2 className="font-display text-2xl md:text-3xl font-bold text-white leading-tight mb-3 line-clamp-3">
             {article.title}
           </h2>
