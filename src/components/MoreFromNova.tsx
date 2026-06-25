@@ -49,7 +49,7 @@ export function MoreFromNova() {
           </span>
         </div>
         <h2 className="font-display text-2xl md:text-3xl font-bold mb-1 text-balance">
-          More apps, all crafted by Nova AI
+          More apps, all crafted by <DOGEKINGMIKE></DOGEKINGMIKE>
         </h2>
         <p className="text-[hsl(var(--news-meta))] font-body text-sm md:text-base mb-8 max-w-2xl text-pretty">
           Aura News 2.0 is part of a growing family of beautifully built apps. Take the rest for a spin.
