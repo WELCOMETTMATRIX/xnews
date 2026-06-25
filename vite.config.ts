@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => ({
   server: {
     host: "::",
     port: 8080,
+    allowedHosts: true,
     hmr: {
       overlay: false,
     },
@@ -44,15 +45,16 @@ export default defineConfig(({ mode }) => ({
         ],
       },
       manifest: {
-        name: "XNEWS — Live Intelligence",
-        short_name: "XNEWS",
-        description: "Real-time news powered by AI. Clear, verified, unbiased reporting.",
-        theme_color: "#0f172a",
-        background_color: "#0f172a",
+        name: "Aura News 2.0 — Live Intelligence",
+        short_name: "Aura News",
+        description: "Crystal-clear, real-time news powered by Nova AI. Verified, unbiased, beautifully delivered.",
+        theme_color: "#0a1822",
+        background_color: "#0a1822",
         display: "standalone",
         orientation: "portrait",
         scope: "/",
         start_url: "/",
+        categories: ["news", "magazines"],
         icons: [
           {
             src: "pwa-192x192.png",
@@ -72,7 +74,7 @@ export default defineConfig(({ mode }) => ({
             sizes: "512x512",
             type: "image/png",
             form_factor: "narrow",
-            label: "XNEWS Home Screen",
+            label: "Aura News 2.0 Home Screen",
           },
         ],
       },

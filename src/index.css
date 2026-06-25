@@ -1,39 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  /* ============================================================
+     AURA CRYSTAL — default iOS glass theme
+     ============================================================ */
   :root {
-    --background: 0 0% 97%;
-    --foreground: 210 15% 10%;
+    --background: 200 40% 97%;
+    --foreground: 210 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 210 15% 10%;
+    --card-foreground: 210 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 210 15% 10%;
+    --popover-foreground: 210 30% 12%;
 
-    --primary: 0 72% 42%;
+    --primary: 185 84% 39%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 14% 92%;
-    --secondary-foreground: 210 15% 20%;
+    --secondary: 195 30% 92%;
+    --secondary-foreground: 200 25% 22%;
 
-    --muted: 210 14% 94%;
-    --muted-foreground: 210 10% 50%;
+    --muted: 200 24% 93%;
+    --muted-foreground: 205 14% 46%;
 
-    --accent: 38 92% 50%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 205 90% 52%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 210 14% 88%;
-    --input: 210 14% 88%;
-    --ring: 0 72% 42%;
-    --radius: 0.5rem;
+    --border: 200 24% 86%;
+    --input: 200 24% 86%;
+    --ring: 185 84% 39%;
+    --radius: 0.85rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -42,20 +45,145 @@
     --sidebar-accent: 240 4.8% 95.9%;
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 0 72% 42%;
+    --sidebar-ring: 185 84% 39%;
 
-    /* News-specific tokens */
-    --news-hero-bg: 210 15% 10%;
+    /* News tokens */
+    --news-hero-bg: 205 45% 12%;
     --news-hero-fg: 0 0% 98%;
-    --news-tag-bg: 0 72% 42%;
+    --news-tag-bg: 185 84% 39%;
     --news-tag-fg: 0 0% 100%;
+    --news-surface: 0 0% 100%;
+    --news-divider: 200 24% 88%;
+    --news-meta: 205 14% 46%;
+    --news-breaking: 0 72% 50%;
+    --news-card-hover: 195 35% 96%;
+
+    /* Aurora glow stops */
+    --aura-1: 185 84% 45%;
+    --aura-2: 205 90% 55%;
+    --aura-3: 165 70% 48%;
+
+    /* Glass surface */
+    --glass-bg: 255 255 255;
+    --glass-alpha: 0.55;
+    --glass-border: 255 255 255;
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+  }
+
+  /* ============================================================
+     MIDNIGHT — deep dark glass
+     ============================================================ */
+  [data-theme="midnight"] {
+    --background: 215 40% 8%;
+    --foreground: 200 30% 94%;
+    --card: 215 35% 12%;
+    --card-foreground: 200 30% 94%;
+    --popover: 215 35% 12%;
+    --popover-foreground: 200 30% 94%;
+    --primary: 180 84% 48%;
+    --primary-foreground: 215 40% 8%;
+    --secondary: 215 30% 18%;
+    --secondary-foreground: 200 25% 88%;
+    --muted: 215 28% 16%;
+    --muted-foreground: 205 16% 64%;
+    --accent: 200 95% 58%;
+    --accent-foreground: 215 40% 8%;
+    --border: 215 28% 20%;
+    --input: 215 28% 20%;
+    --ring: 180 84% 48%;
+
+    --news-hero-bg: 215 45% 6%;
+    --news-hero-fg: 0 0% 98%;
+    --news-tag-bg: 180 84% 48%;
+    --news-surface: 215 35% 12%;
+    --news-divider: 215 28% 20%;
+    --news-meta: 205 16% 64%;
+    --news-card-hover: 215 32% 16%;
+
+    --aura-1: 180 84% 50%;
+    --aura-2: 205 95% 58%;
+    --aura-3: 160 75% 50%;
+
+    --glass-bg: 26 38 58;
+    --glass-alpha: 0.45;
+    --glass-border: 120 180 220;
+  }
+
+  /* ============================================================
+     AURORA — vibrant signature gradient
+     ============================================================ */
+  [data-theme="aurora"] {
+    --background: 200 60% 96%;
+    --foreground: 205 45% 14%;
+    --card: 0 0% 100%;
+    --card-foreground: 205 45% 14%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 205 45% 14%;
+    --primary: 172 80% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 190 40% 90%;
+    --secondary-foreground: 200 30% 20%;
+    --muted: 190 35% 91%;
+    --muted-foreground: 200 16% 44%;
+    --accent: 210 92% 54%;
+    --accent-foreground: 0 0% 100%;
+    --border: 190 30% 84%;
+    --input: 190 30% 84%;
+    --ring: 172 80% 38%;
+
+    --news-hero-bg: 200 55% 14%;
+    --news-surface: 0 0% 100%;
+    --news-divider: 190 30% 85%;
+    --news-meta: 200 16% 44%;
+    --news-card-hover: 185 45% 95%;
+
+    --aura-1: 172 80% 46%;
+    --aura-2: 210 92% 56%;
+    --aura-3: 150 75% 48%;
+
+    --glass-bg: 255 255 255;
+    --glass-alpha: 0.5;
+    --glass-border: 255 255 255;
+  }
+
+  /* ============================================================
+     CLASSIC — clean newsroom light
+     ============================================================ */
+  [data-theme="classic"] {
+    --background: 0 0% 97%;
+    --foreground: 210 15% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 210 15% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 15% 10%;
+    --primary: 0 72% 42%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 14% 92%;
+    --secondary-foreground: 210 15% 20%;
+    --muted: 210 14% 94%;
+    --muted-foreground: 210 10% 50%;
+    --accent: 38 92% 50%;
+    --accent-foreground: 0 0% 10%;
+    --border: 210 14% 88%;
+    --input: 210 14% 88%;
+    --ring: 0 72% 42%;
+
+    --news-hero-bg: 210 15% 10%;
+    --news-tag-bg: 0 72% 42%;
     --news-surface: 0 0% 100%;
     --news-divider: 210 14% 88%;
     --news-meta: 210 10% 50%;
-    --news-breaking: 0 72% 42%;
     --news-card-hover: 210 14% 96%;
-    --font-display: 'Playfair Display', serif;
-    --font-body: 'Inter', sans-serif;
+
+    --aura-1: 0 72% 50%;
+    --aura-2: 38 92% 52%;
+    --aura-3: 18 82% 50%;
+
+    --glass-bg: 255 255 255;
+    --glass-alpha: 0.7;
+    --glass-border: 210 210 210;
   }
 }
 
@@ -67,6 +195,7 @@
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
+    min-height: 100vh;
   }
 
   h1, h2, h3 {
@@ -81,26 +210,56 @@
   .font-body {
     font-family: var(--font-body);
   }
+
+  /* iOS crystal glass surface */
+  .glass {
+    background: rgba(var(--glass-bg), var(--glass-alpha));
+    backdrop-filter: blur(18px) saturate(160%);
+    -webkit-backdrop-filter: blur(18px) saturate(160%);
+    border: 1px solid rgba(var(--glass-border), 0.35);
+  }
+  .glass-strong {
+    background: rgba(var(--glass-bg), calc(var(--glass-alpha) + 0.2));
+    backdrop-filter: blur(28px) saturate(180%);
+    -webkit-backdrop-filter: blur(28px) saturate(180%);
+    border: 1px solid rgba(var(--glass-border), 0.4);
+  }
+
+  /* Aurora background field */
+  .aura-field {
+    position: relative;
+    background:
+      radial-gradient(60% 50% at 10% 0%, hsl(var(--aura-1) / 0.22), transparent 70%),
+      radial-gradient(55% 45% at 95% 5%, hsl(var(--aura-2) / 0.20), transparent 70%),
+      radial-gradient(50% 50% at 50% 110%, hsl(var(--aura-3) / 0.16), transparent 70%);
+  }
+
+  .aura-text {
+    background: linear-gradient(110deg, hsl(var(--aura-1)), hsl(var(--aura-2)), hsl(var(--aura-3)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .aura-ring {
+    box-shadow: 0 0 0 1px hsl(var(--aura-2) / 0.4), 0 8px 30px hsl(var(--aura-1) / 0.25);
+  }
+
   .news-gradient {
-    background: linear-gradient(to bottom, transparent 0%, hsl(210 15% 5% / 0.85) 100%);
+    background: linear-gradient(to bottom, transparent 0%, hsl(var(--news-hero-bg) / 0.9) 100%);
   }
   .card-hover {
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
   .card-hover:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px hsl(210 15% 10% / 0.12);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px hsl(var(--aura-1) / 0.18);
   }
-  .breaking-ticker {
-    animation: ticker 0.4s ease-in;
-  }
-  @keyframes ticker {
-    from { opacity: 0; transform: translateY(-4px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+
   .skeleton-pulse {
-    animation: pulse 1.5s ease-in-out infinite;
-    background: linear-gradient(90deg, hsl(210 14% 92%) 25%, hsl(210 14% 96%) 50%, hsl(210 14% 92%) 75%);
+    background: linear-gradient(90deg, hsl(var(--muted)) 25%, hsl(var(--muted) / 0.5) 50%, hsl(var(--muted)) 75%);
     background-size: 200% 100%;
     animation: shimmer 1.5s infinite;
   }
@@ -108,15 +267,9 @@
     0% { background-position: -200% 0; }
     100% { background-position: 200% 0; }
   }
-}
-
-
-@layer base {
-  * {
-    @apply border-border;
+  @keyframes float-slow {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
   }
-
-  body {
-    @apply bg-background text-foreground;
-  }
+  .animate-float-slow { animation: float-slow 6s ease-in-out infinite; }
 }

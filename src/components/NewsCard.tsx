@@ -1,6 +1,7 @@
 import { Article } from "@/lib/newsApi";
 import { formatDistanceToNow } from "date-fns";
-import { ExternalLink, Clock, User } from "lucide-react";
+import { ExternalLink, Clock, User, Bookmark } from "lucide-react";
+import { useBookmarks } from "@/hooks/useBookmarks";
 
 interface NewsCardProps {
   article: Article;
@@ -10,6 +11,14 @@ interface NewsCardProps {
 export function NewsCard({ article, variant = "default" }: NewsCardProps) {
   const timeAgo = formatDistanceToNow(new Date(article.publishedAt), { addSuffix: true });
   const hasImage = !!article.urlToImage;
+  const { isBookmarked, toggleBookmark } = useBookmarks();
+  const saved = isBookmarked(article.url);
+
+  const handleBookmark = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    toggleBookmark(article);
+  };
 
   if (variant === "hero") {
     return (
@@ -47,8 +56,15 @@ export function NewsCard({ article, variant = "default" }: NewsCardProps) {
             {article.author && <span className="flex items-center gap-1"><User size={12} />{article.author.split(',')[0]}</span>}
           </div>
         </div>
-        <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity">
-          <div className="bg-white/20 backdrop-blur-sm rounded-full p-2">
+        <div className="absolute top-4 right-4 flex items-center gap-2">
+          <button
+            onClick={handleBookmark}
+            aria-label={saved ? "Remove bookmark" : "Save article"}
+            className="bg-white/20 backdrop-blur-sm rounded-full p-2 hover:bg-white/30 transition-colors"
+          >
+            <Bookmark size={14} className={saved ? "fill-white text-white" : "text-white"} />
+          </button>
+          <div className="bg-white/20 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity">
             <ExternalLink size={14} className="text-white" />
           </div>
         </div>
@@ -108,7 +124,13 @@ export function NewsCard({ article, variant = "default" }: NewsCardProps) {
           <span className="text-[hsl(var(--primary))] text-xs font-semibold uppercase tracking-wider font-body">
             {article.source.name}
           </span>
-          <ExternalLink size={12} className="text-[hsl(var(--news-meta))] opacity-0 group-hover:opacity-100 transition-opacity" />
+          <button
+            onClick={handleBookmark}
+            aria-label={saved ? "Remove bookmark" : "Save article"}
+            className="text-[hsl(var(--news-meta))] hover:text-primary transition-colors"
+          >
+            <Bookmark size={14} className={saved ? "fill-primary text-primary" : ""} />
+          </button>
         </div>
         <h3 className="font-display font-bold text-base leading-snug mb-2 line-clamp-3">
           {article.title}
