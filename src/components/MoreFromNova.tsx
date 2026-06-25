@@ -2,13 +2,6 @@ import { ArrowUpRight, Sparkles } from "lucide-react";
 
 const APPS = [
   {
-    name: "Nova AI",
-    tagline: "The flagship AI playground",
-    url: "https://x11ai.vercel.app/",
-    emojiless: "NA",
-    gradient: "linear-gradient(135deg, #22d3ee, #2563eb)",
-  },
-  {
     name: "Nocturne",
     tagline: "AI music for the night owls",
     url: "https://night-echoes-crystal.lovable.app",
@@ -45,11 +38,12 @@ export function MoreFromNova() {
         <div className="flex items-center gap-2 mb-2">
           <Sparkles size={16} className="text-primary" />
           <span className="text-xs font-semibold uppercase tracking-[0.2em] text-primary font-body">
-            The Nova AI Universe
+            The DOGEKINGMIKE Universe
           </span>
         </div>
         <h2 className="font-display text-2xl md:text-3xl font-bold mb-1 text-balance">
-          More apps, all crafted by <DOGEKINGMIKE></DOGEKINGMIKE>
+          More apps, all crafted by{" "}
+          <span className="aura-text">DOGEKINGMIKE</span>
         </h2>
         <p className="text-[hsl(var(--news-meta))] font-body text-sm md:text-base mb-8 max-w-2xl text-pretty">
           Aura News 2.0 is part of a growing family of beautifully built apps. Take the rest for a spin.
